@@ -1,22 +1,22 @@
 ---
 layout: default
-hero: true
 ---
+{% assign m = site.data.media %}
 <section class="hero">
+  {% include slot.html src=m.key_visual label="Key visual · 1920×1080" alt="Samjoko key visual" %}
   <div class="wrap">
     <p class="pre">A new game from GOOD CONTENTS</p>
-    <div class="logo">
-      <h1>SAMJOKO</h1>
-      <span class="ko" lang="ko">삼족오</span>
-    </div>
+    <h1 class="title">SAMJOKO</h1>
+    <span class="title-ko" lang="ko">삼족오</span>
     <p class="lede">Lead your squads across an open world in real time. When armies meet, the battle plays out turn by turn, exactly as you planned it.</p>
     <div class="actions">
-      <span class="btn btn-red"><i class="fa-brands fa-steam"></i> Wishlist on Steam <small>Coming soon</small></span>
-      <a class="btn btn-line" href="{{ '/devlog/' | relative_url }}">Read the devlog</a>
+      <span class="btn btn-primary"><i class="fa-brands fa-steam"></i> Wishlist on Steam <small>Coming soon</small></span>
+      <a class="btn btn-ghost" href="#video">Watch the trailer</a>
       <span class="plats" aria-label="Windows and macOS"><i class="fa-brands fa-windows" title="Windows"></i><i class="fa-brands fa-apple" title="macOS"></i></span>
     </div>
   </div>
 </section>
+<div class="band"></div>
 
 <div class="strip">
   <div class="wrap">
@@ -42,134 +42,145 @@ hero: true
   </div>
 </div>
 
-<section id="game" class="sec">
-  <div class="wrap">
-    <p class="orn"><i></i>The game</p>
-    <h2>A world on the move. Battles you plan, then watch unfold.</h2>
-    <p class="sub">Samjoko takes its name from the three-legged sun crow of legend. It's a single-player strategy RPG about leading an army through a living world.</p>
+<section class="sec tight">
+  <div class="wrap news">
+    <div><span class="label">NEWS</span></div>
+    <div>
+      <ul>
+        {% for post in site.posts limit:4 %}
+        <li><a href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%-m.%-d' }}</time><span class="t">{{ post.title }}</span><span class="ar">›</span></a></li>
+        {% endfor %}
+      </ul>
+      <a class="all" href="{{ '/devlog/' | relative_url }}">ALL NEWS ›</a>
+    </div>
+  </div>
+</section>
 
-    <div class="rows">
-      <div class="row">
-        <div class="art frame"><img src="{{ '/assets/img/map.svg' | relative_url }}" alt="Squads moving across a war map" loading="lazy"><span class="cap">Concept illustration</span></div>
+<section id="overview" class="sec alt">
+  <div class="wrap">
+    <div class="head"><span class="label">OVERVIEW</span><span class="label-sub">The world of Samjoko</span></div>
+    <div class="overview">
+      <div>
+        <p class="big">A world on the move, and an army that answers to you.</p>
+        <p class="copy">Samjoko takes its name from the mythical three-legged sun crow. It is a single-player strategy RPG about leading an army through a living world: marching across open land, choosing your fights, and building the squads that will carry you to the end.</p>
+      </div>
+      {% include slot.html src=m.concept_art ratio="16/10" label="Concept art · 1600×1000" alt="Samjoko concept art" %}
+    </div>
+  </div>
+</section>
+
+<section id="system" class="sec">
+  <div class="wrap">
+    <div class="head"><span class="label">GAME SYSTEM</span><span class="label-sub">Two kinds of command</span></div>
+    <div class="sys">
+      <div class="sys-item">
+        <div class="media">{% include slot.html src=m.system_move label="Gameplay clip · real-time map" alt="Squads moving on the map" %}</div>
         <div>
-          <div class="num">I</div>
-          <h3>Move in real time.</h3>
-          <p>Your squads march across one continuous map, alongside rivals who don't wait for you. Where you stand when the fighting starts decides half the battle.</p>
+          <div class="no">COMMAND 01</div>
+          <h3>Command the field in real time.</h3>
+          <p>Your squads march across one continuous map while rivals move at the same time. Where you stand when the fighting starts decides half the battle.</p>
         </div>
       </div>
-      <div class="row">
-        <div class="art frame"><img src="{{ '/assets/img/formation.svg' | relative_url }}" alt="Two squad formations facing each other" loading="lazy"><span class="cap">Concept illustration</span></div>
+      <div class="sys-item rev">
+        <div class="media">
+          <div class="seq">
+            <div>{% include slot.html src=m.system_plan_1 label="Step 1" alt="Form your squad" %}<div class="cap">Form your squad</div></div>
+            <div>{% include slot.html src=m.system_plan_2 label="Step 2" alt="Set the orders" %}<div class="cap">Set the orders</div></div>
+            <div>{% include slot.html src=m.system_plan_3 label="Step 3" alt="Watch it unfold" %}<div class="cap">Watch it unfold</div></div>
+          </div>
+        </div>
         <div>
-          <div class="num">II</div>
-          <h3>Fight by plan.</h3>
+          <div class="no">COMMAND 02</div>
+          <h3>Win the battle before it starts.</h3>
           <p>Build each squad, set its formation and give its orders before contact. Then the battle runs on its own, turn by turn, and you see if the plan holds.</p>
         </div>
       </div>
-      <div class="row">
-        <div class="art frame"><img src="{{ '/assets/img/world.svg' | relative_url }}" alt="Mountains, a royal hall and a red sun" loading="lazy"><span class="cap">Concept illustration</span></div>
+      <div class="sys-item">
+        <div class="media">{% include slot.html src=m.system_world label="Gameplay clip · world" alt="The world of Samjoko" %}</div>
         <div>
-          <div class="num">III</div>
-          <h3>Stay for hundreds of hours.</h3>
-          <p>Nations, rivals and companions with their own reasons to fight. A long campaign with room to wander, recruit and make the world remember you.</p>
+          <div class="no">THE JOURNEY</div>
+          <h3>A campaign worth hundreds of hours.</h3>
+          <p>Nations, rivals and companions with their own reasons to fight. Recruit, grow your army and make the world remember you.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="band"></div>
-<section class="sec paper formula center">
+<section id="characters" class="sec alt">
   <div class="wrap">
-    <p class="orn c"><i></i>How it came together</p>
-    <h2>Four things players love. One world.</h2>
-    <div class="terms">
-      <span class="t">Tactics</span><span class="x">×</span>
-      <span class="t">Open World</span><span class="x">×</span>
-      <span class="t">Auto Battler</span><span class="x">×</span>
-      <span class="t">Hero's Journey</span>
+    <div class="head"><span class="label">CHARACTERS</span><span class="label-sub">Those who march with you</span></div>
+    <div class="chars">
+      <div class="char">{% include slot.html src=m.character_1 ratio="8/11" label="Character art" alt="Character" %}<div class="name">Coming soon</div><div class="role">Character 01</div></div>
+      <div class="char">{% include slot.html src=m.character_2 ratio="8/11" label="Character art" alt="Character" %}<div class="name">Coming soon</div><div class="role">Character 02</div></div>
+      <div class="char">{% include slot.html src=m.character_3 ratio="8/11" label="Character art" alt="Character" %}<div class="name">Coming soon</div><div class="role">Character 03</div></div>
+      <div class="char">{% include slot.html src=m.character_4 ratio="8/11" label="Character art" alt="Character" %}<div class="name">Coming soon</div><div class="role">Character 04</div></div>
     </div>
-    <div class="result"><b>SAMJOKO</b></div>
   </div>
 </section>
-<div class="band"></div>
+
+<section id="video" class="sec">
+  <div class="wrap">
+    <div class="head"><span class="label">VIDEO</span><span class="label-sub">Trailer</span></div>
+    <div class="trailer">
+      {% if m.trailer and m.trailer != '' %}<iframe src="{{ m.trailer }}" title="Samjoko trailer" allowfullscreen></iframe>
+      {% else %}{% include slot.html label="Trailer · coming soon" %}{% endif %}
+    </div>
+  </div>
+</section>
 
 <section id="studio" class="sec alt">
-  <div class="wrap">
-    <div class="studio-head">
-      <div>
-        <p class="orn"><i></i>The studio</p>
-        <h2 style="margin-bottom:0">We connect the things people love.</h2>
-      </div>
-      <p class="sub">GOOD CONTENTS is a game studio. We look for the connection between games players already love, then build the game where they meet. AI works with us at every step. The vision stays ours.</p>
+  <div class="wrap studio">
+    <div>
+      <div class="head" style="margin-bottom:28px"><span class="label">STUDIO</span><span class="label-sub">GOOD CONTENTS</span></div>
+      <p class="copy">We are a game studio. We look for the connection between games players already love, then build the game where they meet. AI works with us at every step. The vision stays ours.</p>
     </div>
     <div class="pillars">
-      <div class="pillar frame">
-        <div class="k">Game research</div>
-        <h3>Find the next combination.</h3>
-        <p>We study the games players love and look for pairings that create a kind of fun neither game has alone.</p>
-      </div>
-      <div class="pillar frame">
-        <div class="k">Character AI</div>
-        <h3>Characters worth believing.</h3>
-        <p>Allies and enemies act on their own personalities and motives, so the world is easy to step into.</p>
-      </div>
-      <div class="pillar frame">
-        <div class="k">Simulation</div>
-        <h3>Tested around the clock.</h3>
-        <p>Automated play runs 24 hours a day. If a change makes the game even 1% better, it stays.</p>
-      </div>
-      <div class="pillar frame">
-        <div class="k">World building</div>
-        <h3>Depth for the long run.</h3>
-        <p>Histories, factions and characters deep enough to carry hundreds of hours of single-player play.</p>
-      </div>
+      <div class="pillar"><div class="k">Game research</div><h3>Find the next combination.</h3><p>We study the games players love and look for pairings that create a kind of fun neither game has alone.</p></div>
+      <div class="pillar"><div class="k">Character AI</div><h3>Characters worth believing.</h3><p>Allies and enemies act on their own personalities and motives, so the world is easy to step into.</p></div>
+      <div class="pillar"><div class="k">Simulation</div><h3>Tested around the clock.</h3><p>Automated play runs 24 hours a day. If a change makes the game even 1% better, it stays.</p></div>
+      <div class="pillar"><div class="k">World building</div><h3>Depth for the long run.</h3><p>Histories, factions and characters deep enough to carry hundreds of hours of single-player play.</p></div>
     </div>
   </div>
 </section>
 
 <section id="roadmap" class="sec paper">
   <div class="wrap">
-    <p class="orn"><i></i>Roadmap</p>
-    <h2>The road to release.</h2>
+    <div class="head"><span class="label">ROADMAP</span><span class="label-sub">The road to release</span></div>
     <ol class="road">
-      <li class="done"><div class="ch">Chapter I</div><h3>Research and design</h3><span class="st">Cleared</span></li>
-      <li class="now"><div class="ch">Chapter II</div><h3>Core systems and prototype</h3><span class="st">In progress</span></li>
-      <li><div class="ch">Chapter III</div><h3>Vertical slice</h3><span class="st">Next</span></li>
-      <li><div class="ch">Chapter IV</div><h3>Steam page</h3><span class="st">Locked</span></li>
-      <li><div class="ch">Chapter V</div><h3>Early Access</h3><span class="st">Locked</span></li>
-      <li><div class="ch">Final chapter</div><h3>Full release</h3><span class="st">Locked</span></li>
+      <li class="done"><div class="st">Done</div><h3>Research and design</h3></li>
+      <li class="now"><div class="st">Now</div><h3>Core systems and prototype</h3></li>
+      <li><div class="st">Next</div><h3>Vertical slice</h3></li>
+      <li><div class="st">Later</div><h3>Steam page</h3></li>
+      <li><div class="st">Later</div><h3>Early Access</h3></li>
+      <li><div class="st">Goal</div><h3>Full release</h3></li>
     </ol>
   </div>
 </section>
 
-<section id="news" class="sec">
-  <div class="wrap">
-    <p class="orn"><i></i>News</p>
-    <h2>From the devlog.</h2>
-    {% if site.posts.size > 0 %}
-      {% include feature.html post=site.posts.first %}
-      {% if site.posts.size > 1 %}
-      <div class="minis">
-        {% for post in site.posts offset:1 limit:3 %}
-        <a class="mini" href="{{ post.url | relative_url }}">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
-          <h3>{{ post.title }}</h3>
-        </a>
-        {% endfor %}
+<section class="sec">
+  <div class="wrap product">
+    {% include slot.html src=m.package_art ratio="2/3" label="Package art · 600×900" alt="Samjoko package art" %}
+    <div>
+      <h2 class="title">SAMJOKO</h2>
+      <dl>
+        <dt>Release</dt><dd>To be announced</dd>
+        <dt>Platforms</dt><dd>Steam · Windows · macOS</dd>
+        <dt>Genre</dt><dd>Strategy RPG</dd>
+        <dt>Players</dt><dd>Single-player</dd>
+      </dl>
+      <div class="actions">
+        <span class="btn btn-primary"><i class="fa-brands fa-steam"></i> Wishlist on Steam <small>Coming soon</small></span>
+        <a class="btn btn-ghost" href="{{ '/devlog/' | relative_url }}">Follow development</a>
       </div>
-      {% endif %}
-      <a class="more" href="{{ '/devlog/' | relative_url }}">All news</a>
-    {% else %}
-      <p class="empty">The first entry is coming soon.</p>
-    {% endif %}
+    </div>
   </div>
 </section>
 
-<section id="contact" class="sec alt contact center">
+<section id="contact" class="sec alt contact">
   <div class="wrap">
-    <p class="orn c"><i></i>Contact</p>
-    <h2>Press, partners and players.</h2>
-    <p class="sub">Write to us about Samjoko, the studio or working together.</p>
-    <div class="actions"><a class="mail" href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a></div>
+    <div class="head" style="margin-bottom:24px"><span class="label">CONTACT</span><span class="label-sub">Press, partners and players</span></div>
+    <p class="copy">Write to us about Samjoko, the studio or working together.</p>
+    <a class="mail" href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a>
   </div>
 </section>
