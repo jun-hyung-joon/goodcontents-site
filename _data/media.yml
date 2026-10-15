@@ -1,0 +1,15 @@
+# Put files in /assets/media/ and write their paths here.
+# Leave a value empty ("") to show the placeholder frame instead.
+key_visual: ""        # hero background, 1920x1080 image (jpg/webp)
+concept_art: ""       # overview image, 1600x1000
+system_move: ""       # real-time movement clip, 16:9 mp4 (muted loop) or image
+system_plan_1: ""     # battle sequence step 1, 16:9 image
+system_plan_2: ""     # step 2
+system_plan_3: ""     # step 3
+system_world: ""      # world / preparation clip, 16:9 mp4 or image
+character_1: ""       # character art, 800x1100 (transparent png works well)
+character_2: ""
+character_3: ""
+character_4: ""
+trailer: ""           # YouTube embed URL, e.g. https://www.youtube.com/embed/XXXX
+package_art: ""       # capsule / package art, 600x900
