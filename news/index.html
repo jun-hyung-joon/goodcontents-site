@@ -1,0 +1,13 @@
+---
+layout: default
+title: News
+summary: News from GOOD CONTENTS.
+---
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><span class="label">NEWS</span></div>
+    <div class="ngrid">
+      {% for post in site.posts %}{% include news-card.html post=post %}{% endfor %}
+    </div>
+  </div>
+</section>
