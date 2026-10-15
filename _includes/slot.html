@@ -1,0 +1,13 @@
+{%- assign src = include.src -%}
+<div class="slot{% unless src and src != '' %} empty{% endunless %} {{ include.class }}" style="aspect-ratio:{{ include.ratio | default: '16/9' }}">
+{%- if src and src != '' -%}
+  {%- assign ext = src | split: '.' | last | downcase -%}
+  {%- if ext == 'mp4' or ext == 'webm' -%}
+  <video src="{{ src | relative_url }}" autoplay muted loop playsinline></video>
+  {%- else -%}
+  <img src="{{ src | relative_url }}" alt="{{ include.alt }}" loading="lazy">
+  {%- endif -%}
+{%- else -%}
+  <span class="slot-label">{{ include.label }}</span>
+{%- endif -%}
+</div>
