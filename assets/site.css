@@ -1,4 +1,4 @@
-/* GOOD CONTENTS / Samjoko — official game site */
+/* GOOD CONTENTS — studio site */
 :root{
   --night:#090d18; --night-2:#0e1424; --panel:#141b2e; --line:rgba(214,186,128,.22); --line-2:rgba(214,186,128,.45);
   --gold:#d6ba80; --gold-hi:#ecd5a3; --red:#b8322a; --red-hi:#cc3f35;
@@ -24,8 +24,6 @@ section{scroll-margin-top:64px}
 .gh nav{display:flex;gap:26px;margin-left:auto;white-space:nowrap}
 .gh nav a{font-size:12.5px;font-weight:600;letter-spacing:.16em;text-decoration:none;color:var(--txt-2)}
 .gh nav a:hover{color:var(--gold-hi)}
-.gh .cta{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-decoration:none;color:var(--night);background:var(--gold);padding:8px 16px;white-space:nowrap}
-.gh .cta:hover{background:var(--gold-hi)}
 main{padding-top:64px}
 .solidpad{padding-top:64px}
 
@@ -41,6 +39,7 @@ main{padding-top:64px}
 .hero>.slot.empty .slot-label{place-items:start end;padding:28px 32px}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,13,24,0) 35%,rgba(9,13,24,.85) 85%,var(--night) 100%);pointer-events:none}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:76px}
+.hero .pre a{text-decoration:none}.hero .pre a:hover{color:var(--gold-hi)}
 .hero .pre{font-size:12.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .title{font-family:var(--display);font-weight:800;font-size:clamp(60px,11vw,148px);letter-spacing:.06em;line-height:.9;color:#f6f0e4}
 .title-ko{display:block;font-family:var(--display);font-weight:700;font-size:clamp(15px,1.5vw,19px);letter-spacing:1em;color:var(--gold);margin:16px 0 22px}
@@ -79,17 +78,6 @@ main{padding-top:64px}
 .copy{font-size:18px;color:var(--txt-2);max-width:36em}
 .paper .copy{color:var(--ink-2)}
 
-/* news list */
-.news{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
-.news .label{font-size:clamp(34px,4vw,48px)}
-.news ul{list-style:none;border-top:1px solid var(--line)}
-.news li a{display:grid;grid-template-columns:120px 1fr auto;gap:20px;align-items:baseline;padding:18px 4px;border-bottom:1px solid var(--line);text-decoration:none}
-.news li a:hover .t{color:var(--gold-hi)}
-.news time{font-size:13px;letter-spacing:.08em;color:var(--txt-3)}
-.news .t{font-size:16.5px}
-.news .ar{color:var(--gold)}
-.news .all{display:inline-block;margin-top:20px;font-size:12.5px;font-weight:600;letter-spacing:.18em;text-decoration:none;color:var(--gold)}
-
 /* overview */
 .overview{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
 .overview .big{font-family:var(--display);font-size:clamp(30px,3.6vw,46px);line-height:1.3;margin-bottom:24px}
@@ -114,8 +102,8 @@ main{padding-top:64px}
 .trailer{max-width:1000px;margin:0 auto}
 .trailer iframe{width:100%;aspect-ratio:16/9;border:0}
 
-/* studio */
-.studio{display:grid;grid-template-columns:1fr 1.25fr;gap:72px}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.25fr;gap:72px}
 .pillars{display:grid;grid-template-columns:1fr 1fr;gap:36px 44px}
 .pillar{border-top:1px solid var(--line-2);padding-top:18px}
 .pillar .k{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -132,56 +120,55 @@ main{padding-top:64px}
 .road .now .st{color:var(--red)}
 .road h3{font-size:18px;color:var(--ink)}
 
-/* product */
-.product{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:center}
-.product .title{font-size:clamp(46px,6vw,80px)}
-.product dl{display:grid;grid-template-columns:auto 1fr;gap:8px 28px;margin:26px 0 6px;font-size:15px}
-.product dt{color:var(--txt-3);letter-spacing:.1em;font-size:12.5px;text-transform:uppercase;align-self:center}
+/* studio hero */
+.hero-studio{min-height:min(calc(100svh - 64px),760px)}
+.statement{font-size:clamp(40px,6.4vw,88px);font-weight:800;letter-spacing:.01em;line-height:1.08;color:#f6f0e4;max-width:12em;margin-bottom:22px}
 
-/* contact */
-.contact{text-align:center}
-.contact .copy{margin:0 auto}
-.mail{display:inline-block;margin-top:26px;font-family:var(--display);font-size:clamp(22px,3vw,32px);color:var(--gold-hi);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px}
+/* game page sub nav */
+.subnav{position:sticky;top:64px;z-index:40;background:var(--night-2);border-bottom:1px solid var(--line)}
+.subnav .wrap{display:flex;gap:30px;height:48px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav a{font-size:12px;font-weight:600;letter-spacing:.16em;text-decoration:none;color:var(--txt-2);white-space:nowrap}
+.subnav a:hover{color:var(--gold-hi)}
+.subnav~.sec{scroll-margin-top:112px}
 
-/* devlog pages */
-.feature{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;text-decoration:none;margin-top:48px}
-.feature .img{aspect-ratio:16/10;background:var(--panel) center/cover no-repeat}
-.feature.noimg{grid-template-columns:1fr;max-width:800px;background:var(--panel);border:1px solid var(--line);padding:34px 36px}
-.feature time,.post time{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-.feature h3{font-size:clamp(24px,2.8vw,34px);margin:10px 0 12px}
-.feature p{color:var(--txt-2)}
-.feature .go{display:inline-block;margin-top:16px;font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-hi)}
-.feature:hover h3{color:var(--gold-hi)}
-.empty{color:var(--txt-3)}
-.post{max-width:780px;margin:0 auto;padding:80px 32px 110px}
-.post .back{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none}
-.post h1{font-size:clamp(34px,5vw,56px);margin:22px 0 12px}
-.post .cover{width:100%;margin:32px 0 38px}
-.prose{font-size:18px;line-height:1.85;color:var(--txt-2)}
-.prose p,.prose ul,.prose ol{margin-bottom:24px}
-.prose ul,.prose ol{padding-left:22px}
-.prose h2{font-size:28px;color:var(--txt);margin:44px 0 14px}
-.prose a{color:var(--gold-hi)}
-.prose img{margin:14px 0 8px}
-.prose em{display:block;font-style:normal;font-size:13px;color:var(--txt-3);margin-top:-10px}
+/* games grid */
+.games{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.gcard{display:block;text-decoration:none;background:var(--panel);transition:transform .2s ease}
+a.gcard:hover{transform:translateY(-4px)}
+a.gcard:hover h3{color:var(--gold-hi)}
+.gcard.off{opacity:.6}
+.gbody{padding:22px 26px 28px}
+.gmeta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-3)}
+.gstatus{color:var(--night);background:var(--gold);padding:2px 8px;font-weight:600}
+.gplat{display:flex;gap:10px;font-size:15px;color:var(--txt-2);margin-left:auto}
+.gcard h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:.04em;margin:14px 0 8px}
+.gcard p{color:var(--txt-2);font-size:15.5px}
+
+/* news cards */
+.head.row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.more{font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--gold);white-space:nowrap}
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.ncard .slot iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ncard time{display:block;font-size:12px;letter-spacing:.14em;color:var(--gold);margin-top:16px}
+.ncard h3{font-size:20px;margin:6px 0 6px}
+.ntext{font-size:15px;line-height:1.65;color:var(--txt-2)}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:40px 0 54px;color:var(--txt-3);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px 32px;flex-wrap:wrap}
-footer nav{display:flex;gap:22px}
 footer a{color:var(--txt-2);text-decoration:none}
 footer .studio{font-family:var(--display);font-weight:700;letter-spacing:.2em;color:var(--txt)}
 
 /* responsive */
 @media(max-width:1000px){
   .gh nav .hide-m{display:none}
-  .overview,.sys-item,.studio,.product,.news{grid-template-columns:1fr;gap:32px}
+  .overview,.sys-item,.about{grid-template-columns:1fr;gap:32px}
+  .ngrid{grid-template-columns:1fr 1fr}
   .sys-item.rev{grid-template-columns:1fr}.sys-item.rev .media{order:0}
   .chars{grid-template-columns:1fr 1fr}
   .road{grid-template-columns:repeat(3,1fr);row-gap:36px}
-  .feature{grid-template-columns:1fr;gap:22px}
   .strip .wrap{grid-template-columns:1fr}
-  .product .slot{max-width:280px}
 }
 @media(max-width:700px){
   .wrap{padding:0 20px}
@@ -193,8 +180,8 @@ footer .studio{font-family:var(--display);font-weight:700;letter-spacing:.2em;co
   .sys{gap:72px}
   .pillars{grid-template-columns:1fr;gap:26px}
   .road{grid-template-columns:1fr 1fr}
-  .news li a{grid-template-columns:1fr auto;gap:4px 12px}
-  .news time{grid-column:1/-1}
+  .games,.ngrid{grid-template-columns:1fr}
+  .subnav .wrap{gap:22px}
   .hero .wrap{padding-bottom:56px}
   .title-ko{letter-spacing:.7em}
   .btn{height:48px;padding:0 20px}
@@ -202,6 +189,6 @@ footer .studio{font-family:var(--display);font-weight:700;letter-spacing:.2em;co
 }
 @media(max-width:420px){
   .gh .studio{font-size:12.5px;letter-spacing:.14em}
-  .gh .cta{padding:7px 10px;letter-spacing:.08em}
+  .gh nav{gap:14px}.gh nav a{letter-spacing:.1em}
   .chars{gap:12px}
 }
