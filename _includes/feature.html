@@ -1,9 +1,9 @@
-<a class="card feature{% unless include.post.image %} noimg{% endunless %}" href="{{ include.post.url | relative_url }}">
+<a class="feature{% unless include.post.image %} noimg{% endunless %}" href="{{ include.post.url | relative_url }}">
   {% if include.post.image %}<div class="img" style="background-image:url('{{ include.post.image | relative_url }}')" role="img" aria-label="{{ include.post.title }}"></div>{% endif %}
   <div class="txt">
     <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%B %-d, %Y' }}</time>
     <h3>{{ include.post.title }}</h3>
     <p>{{ include.post.excerpt | strip_html | normalize_whitespace | truncatewords: 60 }}</p>
-    <span class="go">Read the full entry →</span>
+    <span class="go">Read more</span>
   </div>
 </a>
