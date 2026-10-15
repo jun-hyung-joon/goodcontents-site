@@ -2,150 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060607">
 <title>{% if page.title %}{{ page.title }} — {% endif %}GOOD CONTENTS{% unless page.title %} — Game Development Studio{% endunless %}</title>
 <meta name="description" content="{{ page.summary | default: site.description }}">
-<meta property="og:title" content="{{ page.title | default: 'GOOD CONTENTS — Game Development Studio' }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GOOD CONTENTS">
+<meta property="og:title" content="{{ page.title | default: 'GOOD CONTENTS — We connect the things people love.' }}">
 <meta property="og:description" content="{{ page.summary | default: site.description }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23f5c542' stroke-width='3.5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
-<style>
-  :root{--bg:#0b0c0e;--fg:#f1f1f3;--soft:#c9cad0;--mute:#8d8f97;--line:#22242a;--accent:#f5c542}
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{background:var(--bg);color:var(--fg);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{text-wrap:balance}
-  p,li,dd{text-wrap:pretty}
-  .nw{white-space:nowrap}
-  img{max-width:100%;height:auto;display:block}
-  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-
-  header{position:sticky;top:0;z-index:10;background:rgba(11,12,14,.8);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.08em;color:var(--fg);font-size:14px;white-space:nowrap}
-  .logo:hover{text-decoration:none}
-  .logo i{width:20px;height:20px;border:4px solid var(--accent);border-radius:50%;flex:none}
-  nav{display:flex;gap:26px;white-space:nowrap}
-  nav a{color:var(--mute);font-size:14px;font-weight:500}nav a:hover{color:var(--fg);text-decoration:none}
-
-  .hero{position:relative;padding:120px 0 110px}
-  .glow{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-  .glow::before{content:"";position:absolute;right:-220px;top:-260px;width:780px;height:780px;background:radial-gradient(closest-side,rgba(245,197,66,.16),transparent 70%)}
-  .glow::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.35;-webkit-mask-image:radial-gradient(ellipse at 75% 25%,#000 10%,transparent 62%);mask-image:radial-gradient(ellipse at 75% 25%,#000 10%,transparent 62%)}
-  .hero .wrap{position:relative}
-  .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--accent);border:1px solid rgba(245,197,66,.3);background:rgba(245,197,66,.06);border-radius:99px;padding:5px 14px;margin-bottom:28px;white-space:nowrap}
-  h1{font-size:clamp(40px,7vw,80px);line-height:1.04;letter-spacing:-.04em;font-weight:800;max-width:11em;margin-bottom:28px}
-  .lead{color:var(--soft);font-size:19px;line-height:1.6;max-width:36em}
-
-  section{padding:96px 0;border-top:1px solid var(--line)}
-  .label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);font-weight:600;margin-bottom:16px}
-  h2{font-size:clamp(28px,4vw,44px);line-height:1.12;letter-spacing:-.03em;font-weight:700;max-width:18em;margin-bottom:20px}
-  .intro{margin-bottom:44px}
-
-  .card{background:linear-gradient(180deg,#15161b,#111216);border:1px solid var(--line);border-radius:18px;padding:32px}
-  .game{display:flex;flex-direction:column;gap:14px;padding:40px}
-  .game-head{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
-  .game h3{font-size:34px;letter-spacing:-.03em;font-weight:800;white-space:nowrap}
-  .platforms{display:inline-flex;align-items:center;gap:16px;font-size:22px;color:var(--soft);white-space:nowrap}
-  .game p{color:var(--soft);font-size:17px;max-width:38em}
-  .meta{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:6px}
-  .chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--fg);border:1px solid var(--line);background:#0f1013;border-radius:99px;padding:5px 12px;white-space:nowrap}
-  .chip.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(245,197,66,.15)}
-
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .facts{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;font-size:14px;margin-top:4px;max-width:520px}
-  .facts dt{color:#6b7a86;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;align-self:center}
-  .facts dd{color:#67c1f5;margin:0}
-  .tags-label{font-size:13px;color:var(--mute);margin-top:10px}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-  .stag{display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:3px;background:rgba(103,193,245,.16);color:#67c1f5;font-size:13px;font-weight:500;white-space:nowrap}
-  .tags .chip{height:28px;margin-right:4px}
-  @media(max-width:640px){.facts{grid-template-columns:auto 1fr;gap:4px 16px}.facts dd{margin-bottom:0}}
-  .pillar{padding:30px 30px 32px}
-  .pillar .num{font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.1em}
-  .pillar h3{font-size:21px;line-height:1.3;letter-spacing:-.015em;margin:14px 0 12px}
-  .pillar p{color:var(--soft);font-size:15.5px}
-
-  .feature{display:grid;grid-template-columns:1.15fr 1fr;overflow:hidden;padding:0;color:var(--fg)}
-  .feature:hover{text-decoration:none;border-color:#34363d}
-  .feature .img{background:#17181c left center/cover no-repeat;min-height:340px}
-  .feature .txt{padding:36px;display:flex;flex-direction:column;gap:12px}
-  .feature time,.post time,.mini time{font-size:13px;color:var(--mute)}
-  .feature h3{font-size:26px;line-height:1.2;letter-spacing:-.02em}
-  .feature p{color:var(--soft);font-size:15.5px}
-  .feature .go{margin-top:auto;padding-top:8px;color:var(--accent);font-size:14px;font-weight:600}
-  .feature.noimg{grid-template-columns:1fr}
-  .minis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
-  .mini{display:block;padding:22px;color:var(--fg)}
-  .mini:hover{text-decoration:none;border-color:#34363d}
-  .mini h3{font-size:16px;line-height:1.35;margin-top:4px}
-  .more{display:inline-block;margin-top:24px;font-size:14px;font-weight:600}
-  .empty{color:var(--mute)}
-
-  .statement{font-size:clamp(20px,2.4vw,26px);line-height:1.5;letter-spacing:-.01em;color:var(--soft);max-width:30em}
-  .statement strong{color:var(--fg);font-weight:600}
-
-  dl{display:grid;grid-template-columns:180px 1fr;gap:12px 20px;font-size:16px}
-  dt{color:var(--mute)}
-  dd{overflow-wrap:anywhere}
-
-  .post{padding:64px 0 88px}
-  .post .back{font-size:14px;font-weight:600}
-  .post h1{font-size:clamp(32px,5vw,52px);margin:18px 0 14px;max-width:16em}
-  .post .cover{border-radius:18px;margin:32px 0 36px;border:1px solid var(--line);width:100%}
-  .prose{font-size:17.5px;max-width:42em}
-  .prose p,.prose ul,.prose ol{margin-bottom:20px;color:var(--soft)}
-  .prose ul,.prose ol{padding-left:22px}
-  .prose h2{font-size:24px;margin:40px 0 14px}
-  .prose img{border-radius:14px;margin:10px 0 8px;border:1px solid var(--line)}
-  .prose em{color:var(--mute);font-size:14px;font-style:normal}
-
-  footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--mute);font-size:13px}
-  footer .wrap{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap}
-
-  @media(max-width:860px){
-    .feature{grid-template-columns:1fr}.feature .img{min-height:0;aspect-ratio:16/9}
-    .minis{grid-template-columns:1fr}
-  }
-  @media(max-width:640px){
-    body{font-size:15px}
-    .wrap{padding:0 18px}
-    nav{gap:18px}
-    .hero{padding:72px 0 64px}
-    .lead{font-size:17px}
-    section{padding:64px 0}
-    .intro{margin-bottom:32px}
-    .grid{grid-template-columns:1fr}
-    .card,.pillar{padding:24px}
-    .game{padding:26px}
-    .game h3{font-size:28px}
-    .platforms{font-size:20px}
-    .feature{padding:0}
-    .feature .txt{padding:24px}
-    .feature h3{font-size:22px}
-    dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:14px}
-    .prose{font-size:16.5px}
-  }
-  @media(max-width:400px){.wrap{padding:0 16px}header .wrap{gap:10px}.logo{font-size:13px;letter-spacing:.05em;gap:8px}.logo i{width:18px;height:18px}nav{gap:14px}nav a{font-size:13px}}
-  @media(max-width:330px){.logo span{display:none}}
-</style>
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 <header>
   <div class="wrap">
     <a class="logo" href="{{ '/' | relative_url }}"><i></i><span>GOOD CONTENTS</span></a>
-    <nav><a href="{{ '/#games' | relative_url }}">Games</a><a href="{{ '/devlog/' | relative_url }}">Devlog</a><a href="{{ '/#contact' | relative_url }}">Contact</a></nav>
+    <nav><a href="{{ '/#samjoko' | relative_url }}">Samjoko</a><a class="opt" href="{{ '/#how' | relative_url }}">Studio</a><a href="{{ '/devlog/' | relative_url }}">Devlog</a><a href="{{ '/#contact' | relative_url }}">Contact</a></nav>
   </div>
 </header>
 
+<main>
 {{ content }}
+</main>
 
 <footer>
   <div class="wrap">
@@ -153,5 +38,6 @@
     <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a>
   </div>
 </footer>
+<script src="{{ '/assets/site.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>
