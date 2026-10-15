@@ -1,17 +1,18 @@
 ---
 layout: post
 title: "The Samjoko devlog begins"
-summary: "Why we're starting a devlog, and what you'll find here as Samjoko takes shape."
+summary: "Why we're opening up our development process, and what you'll find here as Samjoko takes shape."
+image: /assets/devlog/2026-10-15/cover.svg
 ---
 
-Samjoko has been in development for a while, and starting today we'll share its progress here.
+Samjoko has been in development for a while, and starting today we're opening up the process.
 
-Each entry will be short: a few screenshots and a few paragraphs about what changed, what we learned and what comes next.
+Every entry here will be short: a few screenshots and a few paragraphs about what changed, what we learned and where we're heading next.
 
 ## What to expect
 
 - Screenshots and short clips from the current build
-- Notes on how we design characters, worlds and battles
-- How we work with Claude across research, design and engineering
+- How we connect the games players love into something new
+- How AI works with us as a partner at every stage of development
 
 Thanks for following along.
