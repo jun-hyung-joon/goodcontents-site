@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0a1020">
-<title>{% if page.title %}{{ page.title }} | {% endif %}GOOD CONTENTS{% unless page.title %} | Samjoko{% endunless %}</title>
+<meta name="theme-color" content="#090d18">
+<title>{% if page.title %}{{ page.title }} | {% endif %}Samjoko | GOOD CONTENTS</title>
 <meta name="description" content="{{ page.summary | default: site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GOOD CONTENTS">
 <meta property="og:title" content="{{ page.title | default: 'Samjoko | GOOD CONTENTS' }}">
 <meta property="og:description" content="{{ page.summary | default: site.description }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-<meta property="og:image" content="{{ page.image | default: '/assets/img/hero.svg' | absolute_url }}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a1020'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23b8322a'/%3E%3C/svg%3E">
+{% assign ogimg = page.image | default: site.data.media.key_visual %}{% if ogimg and ogimg != '' %}<meta property="og:image" content="{{ ogimg | absolute_url }}">{% endif %}
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090d18'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23b8322a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,25 +21,34 @@
 <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-<header class="top{% unless page.hero %} solid{% endunless %}">
+<header class="gh">
   <div class="wrap">
-    <a class="brand" href="{{ '/' | relative_url }}"><b>GOOD CONTENTS</b></a>
+    <a class="studio" href="{{ '/' | relative_url }}">GOOD CONTENTS</a>
     <nav>
-      <a class="hide-s" href="{{ '/#game' | relative_url }}">Game</a>
-      <a href="{{ '/devlog/' | relative_url }}">News</a>
-      <a class="hide-s" href="{{ '/#studio' | relative_url }}">Studio</a>
-      <a class="wl" href="{{ '/#contact' | relative_url }}">Contact</a>
+      <a class="hide-s" href="{{ '/#overview' | relative_url }}">OVERVIEW</a>
+      <a class="hide-s" href="{{ '/#system' | relative_url }}">GAME SYSTEM</a>
+      <a class="hide-m hide-s" href="{{ '/#characters' | relative_url }}">CHARACTERS</a>
+      <a class="hide-m hide-s" href="{{ '/#video' | relative_url }}">VIDEO</a>
+      <a href="{{ '/devlog/' | relative_url }}">NEWS</a>
     </nav>
+    <a class="cta" href="{{ '/#contact' | relative_url }}">CONTACT</a>
   </div>
 </header>
 
+<main>
 {{ content }}
+</main>
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="{{ '/' | relative_url }}"><b>GOOD CONTENTS</b></a>
-    <span>© {{ site.time | date: '%Y' }} GOOD CONTENTS. Samjoko is in development.</span>
-    <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a>
+    <span class="studio">GOOD CONTENTS</span>
+    <nav>
+      <a href="{{ '/#overview' | relative_url }}">Overview</a>
+      <a href="{{ '/#system' | relative_url }}">Game System</a>
+      <a href="{{ '/#characters' | relative_url }}">Characters</a>
+      <a href="{{ '/devlog/' | relative_url }}">News</a>
+    </nav>
+    <span>© {{ site.time | date: '%Y' }} GOOD CONTENTS · <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a></span>
   </div>
 </footer>
 </body>
