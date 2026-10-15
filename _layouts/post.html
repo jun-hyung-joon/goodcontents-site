@@ -3,11 +3,11 @@ layout: default
 ---
 <main class="wrap">
   <article class="post">
-    <a href="{{ '/devlog/' | relative_url }}">← Devlog</a>
+    <a class="back" href="{{ '/devlog/' | relative_url }}">← Devlog</a>
     <h1>{{ page.title }}</h1>
     <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
-    {% if page.image %}<img class="cover" src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="margin-top:20px">{% endif %}
-    <div class="prose">
+    {% if page.image %}<img class="cover" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
+    <div class="prose"{% unless page.image %} style="margin-top:32px"{% endunless %}>
       {{ content }}
     </div>
   </article>
