@@ -1,0 +1,30 @@
+---
+layout: default
+title: Devlog
+summary: Development notes and progress updates from GOOD CONTENTS.
+---
+<main class="wrap">
+  <div class="hero" style="padding-bottom:48px">
+    <span class="tag">Devlog</span>
+    <h1>Notes from development.</h1>
+    <p class="lead">Progress updates, screenshots and behind-the-scenes notes as we build Samjoko.</p>
+  </div>
+  <section>
+    {% if site.posts.size > 0 %}
+    <div class="posts">
+      {% for post in site.posts %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <div class="thumb"{% if post.image %} style="background-image:url('{{ post.image | relative_url }}')"{% endif %}></div>
+        <div class="body">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+          <h3>{{ post.title }}</h3>
+          {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="empty">The first entry is coming soon.</p>
+    {% endif %}
+  </section>
+</main>
