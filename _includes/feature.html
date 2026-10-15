@@ -3,7 +3,7 @@
   <div class="txt">
     <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%B %-d, %Y' }}</time>
     <h3>{{ include.post.title }}</h3>
-    <p>{{ include.post.content | strip_html | normalize_whitespace | truncatewords: 55 }}</p>
+    <p>{{ include.post.excerpt | strip_html | normalize_whitespace | truncatewords: 60 }}</p>
     <span class="go">Read the full entry →</span>
   </div>
 </a>
