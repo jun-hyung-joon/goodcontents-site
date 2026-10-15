@@ -1,74 +1,70 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>goodcontents — Indie Game Studio</title>
-<meta name="description" content="goodcontents is an independent game studio connecting the things people love into more joyful experiences. Now developing Samjoko for Steam.">
-<meta property="og:title" content="goodcontents — Indie Game Studio">
-<meta property="og:description" content="We connect the things people love into more joyful experiences. Now developing Samjoko for Steam.">
-<meta property="og:url" content="https://goodcontents.co.kr/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23f5c542' stroke-width='3.5'/%3E%3C/svg%3E">
-<style>
-  :root{--bg:#0f1012;--fg:#ececec;--mute:#9a9ca3;--line:#25272c;--accent:#f5c542;--card:#16171a}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
-  header{border-bottom:1px solid var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;color:var(--fg)}
-  .logo i{width:22px;height:22px;border:4px solid var(--accent);border-radius:50%}
-  nav a{color:var(--mute);margin-left:22px;font-size:15px}nav a:hover{color:var(--fg);text-decoration:none}
-  .hero{padding:96px 0 80px}
-  .tag{display:inline-block;font-size:13px;color:var(--accent);border:1px solid #4a3f1c;border-radius:99px;padding:3px 12px;margin-bottom:22px}
-  h1{font-size:clamp(34px,6vw,54px);line-height:1.12;letter-spacing:-.03em;margin-bottom:20px}
-  .lead{color:var(--mute);font-size:18px;max-width:640px}
-  .lead + .lead{margin-top:14px}
-  section{padding:64px 0;border-top:1px solid var(--line)}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin-bottom:24px;font-weight:600}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
-  .card h3{font-size:24px;margin-bottom:8px;letter-spacing:-.01em}
-  .card p{color:var(--mute)}
-  .status{display:inline-flex;align-items:center;gap:8px;font-size:14px;margin-top:16px;color:var(--fg)}
-  .status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
-  dl{display:grid;grid-template-columns:150px 1fr;gap:10px 20px;font-size:15px}
-  dt{color:var(--mute)}
-  footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mute);font-size:13px;line-height:1.8}
-  dd{overflow-wrap:anywhere}
-  @media(min-width:1200px){.wrap{max-width:960px}h1{font-size:60px}.lead{font-size:19px}}
-  @media(max-width:560px){body{font-size:15px}.wrap{padding:0 16px}nav a{margin-left:14px;font-size:14px}.hero{padding:56px 0 48px}.br{display:none}.lead{font-size:16px}section{padding:48px 0}.card{padding:22px}.card h3{font-size:21px}dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:12px}}
-  @media(max-width:360px){.logo span{display:none}nav a{margin-left:10px}}
-</style>
-</head>
-<body>
-<header>
-  <div class="wrap">
-    <a class="logo" href="/"><i></i><span>goodcontents</span></a>
-    <nav><a href="#games">Games</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  </div>
-</header>
-
+---
+layout: default
+---
 <main class="wrap">
   <div class="hero">
-    <span class="tag">Independent game studio · Seoul, Korea</span>
+    <span class="tag">Game development studio · Seoul, Korea</span>
     <h1>We connect the things <br class="br">people love.</h1>
-    <p class="lead">goodcontents brings together the things people love and connects them into experiences that are more joyful than either one alone.</p>
+    <p class="lead">GOOD CONTENTS brings together the things people love and connects them into games that have never existed before.</p>
   </div>
 
   <section id="games">
     <h2>Games</h2>
     <div class="card">
       <h3>Samjoko</h3>
-      <p>Our first title for PC, currently in development. More details and a Steam store page are coming soon.</p>
-      <span class="status">In development · Steam (PC)</span>
+      <p>A game unlike anything that exists today, weaving together the worlds and mechanics players love into one new experience. More to share soon.</p>
+      <span class="status">In development</span>
     </div>
+  </section>
+
+  <section id="ai">
+    <h2>Built with Claude</h2>
+    <p class="lead">GOOD CONTENTS is an AI-native studio. Claude works across every stage of Samjoko, from research and design to engineering and testing, as our researcher, designer and engineer.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Game research</h3>
+        <p>Claude studies the games and systems players love and distills them into documented design rules, with evidence behind every decision.</p>
+      </div>
+      <div class="card">
+        <h3>Character AI</h3>
+        <p>We build AI-driven characters and enemy strategists with their own personalities, motives and tactics, so every encounter feels authored rather than scripted.</p>
+      </div>
+      <div class="card">
+        <h3>Simulation &amp; testing</h3>
+        <p>A deterministic game simulation lets Claude run large batches of automated battles to verify balance and catch regressions before a human ever plays.</p>
+      </div>
+      <div class="card">
+        <h3>Worlds at scale</h3>
+        <p>A cast of more than a hundred characters, multilingual from day one, maintained as a living world wiki that drives the game directly.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:28px">Every line of code, design document and test in Samjoko is created in collaboration with Claude.</p>
+  </section>
+
+  <section id="devlog">
+    <h2>Devlog</h2>
+    {% if site.posts.size > 0 %}
+    <div class="posts">
+      {% for post in site.posts limit:3 %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <div class="thumb"{% if post.image %} style="background-image:url('{{ post.image | relative_url }}')"{% endif %}></div>
+        <div class="body">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+          <h3>{{ post.title }}</h3>
+          {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <a class="more" href="{{ '/devlog/' | relative_url }}">All devlog entries →</a>
+    {% else %}
+    <p class="empty">The first entry is coming soon.</p>
+    {% endif %}
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p class="lead">goodcontents is an independent studio based in Korea. We believe the best experiences happen when two things people already love meet in a new way, and we build games around those connections.</p>
-    <p class="lead">We work with modern tools, including AI-assisted workflows, so a small team can ship polished, self-published games on Steam.</p>
+    <p class="lead">GOOD CONTENTS is a game development studio based in Seoul, Korea. We believe the best experiences happen when things people already love meet in a new way, and we build games around those connections.</p>
   </section>
 
   <section id="contact">
@@ -79,12 +75,3 @@
     </dl>
   </section>
 </main>
-
-<footer>
-  <div class="wrap">
-    goodcontents · Seoul, Republic of Korea · contact@goodcontents.co.kr<br>
-    © 2026 goodcontents. All rights reserved.
-  </div>
-</footer>
-</body>
-</html>

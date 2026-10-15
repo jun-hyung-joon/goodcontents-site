@@ -1,0 +1,8 @@
+title: GOOD CONTENTS
+description: A game development studio connecting the things people love into games that have never existed before.
+url: https://goodcontents.co.kr
+lang: en
+markdown: kramdown
+permalink: /devlog/:year/:month/:day/:title/
+exclude:
+  - README.md
