@@ -2,23 +2,27 @@
 
 GOOD CONTENTS studio site, built by GitHub Pages (Jekyll).
 
-## Add a devlog entry
+- `/` studio home: games, latest news, about
+- `/games/<name>/` one page per game
+- `/news/` all news
 
-1. Upload images to `assets/devlog/YYYY-MM-DD/` (e.g. `cover.jpg`, `01.jpg`). Keep each under ~1 MB.
-2. Create `_posts/YYYY-MM-DD-short-title.md`:
+## Add news
+
+Upload the image or clip to `assets/news/`, then create `_posts/YYYY-MM-DD-short-title.md`:
 
 ```markdown
 ---
-layout: post
-title: "Title of the update"
-summary: "One sentence shown on the card."
-image: /assets/devlog/YYYY-MM-DD/cover.jpg
+title: "Title"
+media: /assets/news/2026-11-01.jpg   # jpg/png/webp, or mp4 (plays muted, looped)
+youtube: ""                          # or a YouTube embed URL instead of media
 ---
-
-A few short paragraphs.
-
-![Caption](/assets/devlog/YYYY-MM-DD/01.jpg)
-*Caption text*
+One or two lines.
 ```
 
-The newest three entries appear on the home page automatically; all entries are listed at `/devlog/`.
+## Add a game
+
+Add an entry to `_data/games.yml`. For a game page, copy `games/samjoko/` and set its `url`.
+
+## Images
+
+Write file paths in `_data/media.yml` (sizes are noted there).
