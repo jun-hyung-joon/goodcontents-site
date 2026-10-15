@@ -1,84 +1,169 @@
 ---
 layout: default
 ---
-<div class="hero">
+<section class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow reveal">Game development studio</span>
+    <h1 class="display reveal d1">We connect the things <span class="grad">people love.</span></h1>
+    <p class="lead reveal d2">GOOD CONTENTS builds games that have never existed before, by connecting the genres, stories and worlds players already love. With AI as our partner at every step.</p>
+    <div class="btns reveal d3">
+      <a class="btn primary" href="#samjoko">Meet Samjoko</a>
+      <a class="btn ghost" href="{{ '/devlog/' | relative_url }}">Follow development</a>
+    </div>
+  </div>
+  <span class="scroll-cue">Scroll</span>
+</section>
+
+<section class="sep center">
+  <div class="wrap">
+    <span class="eyebrow reveal">Our formula</span>
+    <h2 class="reveal d1">Every great new game starts as a connection no one has made yet.</h2>
+    <div class="formula reveal d2" aria-label="Tactics times Open World times Auto Battler times Hero's Journey equals Samjoko">
+      <div class="terms">
+        <span class="term">Tactics</span><span class="op">×</span>
+        <span class="term">Open World</span><span class="op">×</span>
+        <span class="term">Auto Battler</span><span class="op">×</span>
+        <span class="term">Hero's Journey</span>
+      </div>
+      <div class="eq"><span class="res"><span class="op">=</span><span class="result grad">Samjoko</span></span></div>
+    </div>
+    <p class="lead reveal d3">We study what players love, find what fits together, and build the game that only exists at the intersection.</p>
+  </div>
+</section>
+
+<section id="samjoko" class="product sep">
   <div class="glow"></div>
-  <div class="wrap">
-    <span class="tag">Game development studio</span>
-    <h1>We connect the things people love.</h1>
-    <p class="lead">GOOD CONTENTS connects the games, stories and worlds people love into games that have never existed before.</p>
-  </div>
-</div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow reveal">Now in development</span>
+    <div class="emblem reveal d1" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".55" stop-color="#f5c542"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient>
+          <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f5c542" stop-opacity=".35"/><stop offset="1" stop-color="#f5c542" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="190" fill="url(#halo)"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="#f5c542" stroke-opacity=".35" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="118" fill="none" stroke="#f5c542" stroke-opacity=".18" stroke-width="1" stroke-dasharray="3 7"/>
+        <polygon points="200,50 330,275 70,275" fill="none" stroke="#f5c542" stroke-opacity=".55" stroke-width="1.5"/>
+        <line x1="200" y1="200" x2="200" y2="50" stroke="#f5c542" stroke-opacity=".4"/>
+        <line x1="200" y1="200" x2="330" y2="275" stroke="#f5c542" stroke-opacity=".4"/>
+        <line x1="200" y1="200" x2="70" y2="275" stroke="#f5c542" stroke-opacity=".4"/>
+        <circle cx="200" cy="200" r="54" fill="url(#sun)"/>
+        <circle cx="200" cy="50" r="11" fill="#060607" stroke="#f5c542" stroke-width="4"/>
+        <circle cx="330" cy="275" r="11" fill="#060607" stroke="#f5c542" stroke-width="4"/>
+        <circle cx="70" cy="275" r="11" fill="#060607" stroke="#f5c542" stroke-width="4"/>
+      </svg>
+    </div>
+    <h2 class="display reveal">Samjoko</h2>
+    <p class="lead reveal d1">Lead your squads across a vast, living world inspired by East Asian myth, where real-time command meets tactical battles that unfold by your design.</p>
+    <p class="namenote reveal d2">Named for the three-legged sun crow of East Asian legend.</p>
+    <div class="platforms reveal d2" aria-label="Steam, Windows and macOS">
+      <i class="fa-brands fa-steam" title="Steam"></i><i class="fa-brands fa-windows" title="Windows"></i><i class="fa-brands fa-apple" title="macOS"></i>
+    </div>
+    <div class="btns reveal d3" style="justify-content:center">
+      <span class="btn soon"><i class="fa-brands fa-steam"></i> Wishlist on Steam <small>Coming soon</small></span>
+      <a class="btn ghost" href="{{ '/devlog/' | relative_url }}">Read the devlog</a>
+    </div>
 
-<section id="games">
-  <div class="wrap">
-    <span class="label">Games</span>
-    <div class="card game">
-      <div class="game-head">
-        <h3>Samjoko</h3>
-        <span class="platforms" aria-label="Available on Steam for Windows and macOS">
-          <i class="fa-brands fa-steam" title="Steam"></i>
-          <i class="fa-brands fa-windows" title="Windows"></i>
-          <i class="fa-brands fa-apple" title="macOS"></i>
-        </span>
+    <div class="panel reveal">
+      <div class="panel-grid">
+        <dl class="facts">
+          <dt>Release date</dt><dd>To be announced</dd>
+          <dt>Developer</dt><dd>GOOD CONTENTS</dd>
+          <dt>Publisher</dt><dd>GOOD CONTENTS</dd>
+          <dt>Platforms</dt><dd>Steam · Windows · macOS</dd>
+        </dl>
+        <div>
+          <div class="tags-label">Popular tags for this game:</div>
+          <div class="tags">
+            <span class="chip live">In development</span>
+            <span class="stag">RPG</span>
+            <span class="stag">Simulation</span>
+            <span class="stag">Turn-Based + Real-Time</span>
+            <span class="stag">Open World</span>
+            <span class="stag">Auto Battler</span>
+            <span class="stag">Hero's Journey</span>
+            <span class="stag">3D</span>
+          </div>
+        </div>
       </div>
-      <p>A game unlike anything that exists today, weaving together the worlds and mechanics players love into one new experience.</p>
-      <dl class="facts">
-        <dt>Release date</dt><dd>To be announced</dd>
-        <dt>Developer</dt><dd>GOOD CONTENTS</dd>
-        <dt>Publisher</dt><dd>GOOD CONTENTS</dd>
-        <dt>Platforms</dt><dd>Steam · Windows · macOS</dd>
-      </dl>
-      <div class="tags-label">Popular tags for this game:</div>
-      <div class="tags">
-        <span class="chip live">In development</span>
-        <span class="stag">RPG</span>
-        <span class="stag">Simulation</span>
-        <span class="stag">Turn-Based + Real-Time</span>
-        <span class="stag">Open World</span>
-        <span class="stag">Auto Battler</span>
-        <span class="stag">Hero's Journey</span>
-        <span class="stag">3D</span>
+    </div>
+
+    <div class="features">
+      <div class="feat reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>Command in real time.</h3>
+        <p>Move your squads across a living map. Every position, approach and flank shapes the battle before it begins.</p>
+      </div>
+      <div class="feat reveal d1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></div>
+        <h3>Battles by your design.</h3>
+        <p>Build your squads, set their tactics and watch them carry out your plan, turn by turn, exactly as you drew it up.</p>
+      </div>
+      <div class="feat reveal d2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
+        <h3>A world to get lost in.</h3>
+        <p>Nations, rivals and companions with their own motives, across a single-player journey built for hundreds of hours.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="how">
+<section id="how" class="sep">
   <div class="wrap">
-    <span class="label">How we build</span>
-    <h2>AI is our partner at every stage of development.</h2>
-    <p class="lead intro">From the first research note to the final test, AI works alongside us as a partner. Our team sets the vision. AI helps us reach it faster, test it harder and build it deeper than a studio our size ever could alone.</p>
-    <div class="grid">
-      <div class="card pillar">
-        <span class="num">01 · GAME RESEARCH</span>
+    <span class="eyebrow reveal">How we build</span>
+    <h2 class="reveal d1">AI is our partner at every stage of development.</h2>
+    <p class="lead reveal d2">Our team sets the vision. AI works alongside us from the first research note to the final test, helping us reach that vision faster, test it harder and build it deeper than a studio our size ever could alone.</p>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="big grad">1 + 1 = 3</div>
+        <div class="k">Game research</div>
         <h3>New kinds of fun, from games players already love.</h3>
-        <p>We study the games players love and connect them to one another, finding combinations that create a kind of fun no single game could offer on its own.</p>
+        <p>We study the games players love and connect them to one another, finding combinations that create fun no single game could offer on its own.</p>
       </div>
-      <div class="card pillar">
-        <span class="num">02 · CHARACTER AI</span>
+      <div class="pillar reveal d1">
+        <div class="big grad">Alive</div>
+        <div class="k">Character AI</div>
         <h3>Worlds that draw you in from the first minute.</h3>
-        <p>Characters with their own personalities, motives and tactics respond the way people would, so players can step into the world and feel immersed right away.</p>
+        <p>Characters with their own personalities, motives and tactics respond the way people would, so players feel at home in the world right away.</p>
       </div>
-      <div class="card pillar">
-        <span class="num">03 · SIMULATION</span>
+      <div class="pillar reveal">
+        <div class="big grad">24 / 7</div>
+        <div class="k">Simulation</div>
         <h3>Testing around the clock for every 1% better.</h3>
-        <p>Automated simulations play our games 24 hours a day, testing every change, because even a 1% improvement in how a game feels is worth chasing.</p>
+        <p>Automated simulations play our games day and night, testing every change, because even a 1% improvement in how a game feels is worth chasing.</p>
       </div>
-      <div class="card pillar">
-        <span class="num">04 · WORLDS AT SCALE</span>
-        <h3>Depth worth hundreds of hours.</h3>
-        <p>Vast worlds with deep histories, factions and characters, built for single-player adventures that players can lose themselves in for hundreds of hours.</p>
+      <div class="pillar reveal d1">
+        <div class="big grad">100s<small> of hours</small></div>
+        <div class="k">Worlds at scale</div>
+        <h3>Depth that rewards every hour you give it.</h3>
+        <p>Vast worlds with deep histories, factions and characters, built for single-player adventures that players can lose themselves in.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="devlog">
+<section id="roadmap" class="sep">
   <div class="wrap">
-    <span class="label">Devlog</span>
-    <h2>Latest from development.</h2>
-    <div style="margin-top:32px">
+    <span class="eyebrow reveal">Roadmap</span>
+    <h2 class="reveal d1">Where we are, and where we're going.</h2>
+    <ol class="road reveal d2">
+      <li class="done"><span class="dot"></span><div class="st">Done</div><h3>Research &amp; game design</h3></li>
+      <li class="now"><span class="dot"></span><div class="st">Now</div><h3>Core systems &amp; prototype</h3></li>
+      <li><span class="dot"></span><div class="st">Next</div><h3>Vertical slice</h3></li>
+      <li><span class="dot"></span><div class="st">Then</div><h3>Steam page &amp; wishlists</h3></li>
+      <li><span class="dot"></span><div class="st">Then</div><h3>Early Access</h3></li>
+      <li><span class="dot"></span><div class="st">Goal</div><h3>Full launch</h3></li>
+    </ol>
+  </div>
+</section>
+
+<section id="devlog" class="sep">
+  <div class="wrap">
+    <span class="eyebrow reveal">Devlog</span>
+    <h2 class="reveal d1">Latest from development.</h2>
+    <div class="reveal d2" style="margin-top:44px">
     {% if site.posts.size > 0 %}
       {% include feature.html post=site.posts.first %}
       {% if site.posts.size > 1 %}
@@ -99,19 +184,26 @@ layout: default
   </div>
 </section>
 
-<section id="about">
+<section id="about" class="sep">
   <div class="wrap">
-    <span class="label">About</span>
-    <p class="statement"><strong>GOOD CONTENTS is a game development studio.</strong> We believe the best experiences happen when the things people already love meet in a new way. We build games around those connections, and we build them with AI as our partner.</p>
+    <span class="eyebrow reveal">About GOOD CONTENTS</span>
+    <h2 class="reveal d1">A studio built for what's next in play.</h2>
+    <div class="principles">
+      <div class="reveal"><div class="n">01</div><h3>Connect, don't copy.</h3><p>We start from what players already love and look for the connection no one has made yet.</p></div>
+      <div class="reveal d1"><div class="n">02</div><h3>Partner with AI.</h3><p>Our team sets the vision. AI helps us research, build and test at a scale small studios never could before.</p></div>
+      <div class="reveal d2"><div class="n">03</div><h3>Earn every hour.</h3><p>Depth worth hundreds of hours, tested until every system feels exactly right.</p></div>
+    </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="cta sep center">
+  <div class="glow"></div>
   <div class="wrap">
-    <span class="label">Contact</span>
-    <dl>
-      <dt>Email</dt><dd><a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a></dd>
-      <dt>Press &amp; business</dt><dd>We'd love to hear from you. Please reach us by email.</dd>
-    </dl>
+    <span class="eyebrow reveal">Contact</span>
+    <h2 class="display reveal d1" style="max-width:11em;margin:0 auto 24px">Let's build what's next <span class="grad">in play.</span></h2>
+    <p class="lead reveal d2">For partnerships, press and investment, we'd love to hear from you.</p>
+    <div class="btns reveal d3">
+      <a class="btn primary" href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a>
+    </div>
   </div>
 </section>
