@@ -6,10 +6,13 @@
   if (!('IntersectionObserver' in window) || reduce) {
     els.forEach(function(e){ e.classList.add('in'); });
   } else {
+    var fired = false;
     var io = new IntersectionObserver(function(entries){
+      fired = true;
       entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
     }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
     els.forEach(function(e){ io.observe(e); });
+    setTimeout(function(){ if (!fired) els.forEach(function(e){ e.classList.add('in'); }); }, 1500);
   }
 
   // Hero network: things people love, connecting
