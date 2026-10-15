@@ -1,0 +1,16 @@
+# One entry per game. The home page GAMES grid is built from this list.
+# capsule: 16:9 image (1280x720) in /assets/media/. Leave "" for the empty frame.
+- title: SAMJOKO
+  url: /games/samjoko/
+  status: In development
+  genre: Strategy RPG
+  platforms: [steam, windows, apple]
+  line: Lead your squads across an open world in real time, then watch your plan play out in turn-based battle.
+  capsule: ""
+- title: Unannounced
+  url: ""
+  status: In planning
+  genre: To be revealed
+  platforms: []
+  line: Our next project. More when it's ready.
+  capsule: ""
