@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090d18">
-<title>{% if page.title %}{{ page.title }} | {% endif %}Samjoko | GOOD CONTENTS</title>
+<title>{% if page.title %}{{ page.title }} | {% endif %}GOOD CONTENTS</title>
 <meta name="description" content="{{ page.summary | default: site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GOOD CONTENTS">
-<meta property="og:title" content="{{ page.title | default: 'Samjoko | GOOD CONTENTS' }}">
+<meta property="og:title" content="{{ page.title | default: 'GOOD CONTENTS' }}">
 <meta property="og:description" content="{{ page.summary | default: site.description }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-{% assign ogimg = page.image | default: site.data.media.key_visual %}{% if ogimg and ogimg != '' %}<meta property="og:image" content="{{ ogimg | absolute_url }}">{% endif %}
+{% assign ogimg = page.image | default: site.data.media.studio_visual %}{% if ogimg and ogimg != '' %}<meta property="og:image" content="{{ ogimg | absolute_url }}">{% endif %}
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23090d18'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23b8322a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,13 +25,10 @@
   <div class="wrap">
     <a class="studio" href="{{ '/' | relative_url }}">GOOD CONTENTS</a>
     <nav>
-      <a class="hide-s" href="{{ '/#overview' | relative_url }}">OVERVIEW</a>
-      <a class="hide-s" href="{{ '/#system' | relative_url }}">GAME SYSTEM</a>
-      <a class="hide-m hide-s" href="{{ '/#characters' | relative_url }}">CHARACTERS</a>
-      <a class="hide-m hide-s" href="{{ '/#video' | relative_url }}">VIDEO</a>
-      <a href="{{ '/devlog/' | relative_url }}">NEWS</a>
+      <a href="{{ '/#games' | relative_url }}">GAMES</a>
+      <a href="{{ '/news/' | relative_url }}">NEWS</a>
+      <a href="{{ '/#about' | relative_url }}">ABOUT</a>
     </nav>
-    <a class="cta" href="{{ '/#contact' | relative_url }}">CONTACT</a>
   </div>
 </header>
 
@@ -42,13 +39,8 @@
 <footer>
   <div class="wrap">
     <span class="studio">GOOD CONTENTS</span>
-    <nav>
-      <a href="{{ '/#overview' | relative_url }}">Overview</a>
-      <a href="{{ '/#system' | relative_url }}">Game System</a>
-      <a href="{{ '/#characters' | relative_url }}">Characters</a>
-      <a href="{{ '/devlog/' | relative_url }}">News</a>
-    </nav>
-    <span>© {{ site.time | date: '%Y' }} GOOD CONTENTS · <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a></span>
+    <span>Business inquiries <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a></span>
+    <span>&copy; {{ site.time | date: '%Y' }} GOOD CONTENTS</span>
   </div>
 </footer>
 </body>
