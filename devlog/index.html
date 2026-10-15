@@ -3,19 +3,18 @@ layout: default
 title: Devlog
 summary: Development notes and progress updates from GOOD CONTENTS.
 ---
-<div class="hero" style="padding-bottom:64px">
-  <div class="glow"></div>
+<section class="page-hero">
   <div class="wrap">
-    <span class="tag">Devlog</span>
-    <h1>Notes from development.</h1>
-    <p class="lead">Progress, screenshots and the thinking behind Samjoko, shared as it takes shape.</p>
+    <span class="eyebrow reveal">Devlog</span>
+    <h1 class="display reveal d1" style="font-size:clamp(44px,7vw,88px);max-width:10em;margin-bottom:24px">Notes from development.</h1>
+    <p class="lead reveal d2">Progress, screenshots and the thinking behind Samjoko, shared as it takes shape.</p>
   </div>
-</div>
-<section>
+</section>
+<section style="padding-top:40px">
   <div class="wrap">
     {% if site.posts.size > 0 %}
       {% for post in site.posts %}
-        <div style="margin-bottom:16px">{% include feature.html post=post %}</div>
+        <div class="reveal" style="margin-bottom:18px">{% include feature.html post=post %}</div>
       {% endfor %}
     {% else %}
       <p class="empty">The first entry is coming soon.</p>
