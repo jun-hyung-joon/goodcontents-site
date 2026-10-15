@@ -3,28 +3,22 @@ layout: default
 title: Devlog
 summary: Development notes and progress updates from GOOD CONTENTS.
 ---
-<main class="wrap">
-  <div class="hero" style="padding-bottom:48px">
+<div class="hero" style="padding-bottom:64px">
+  <div class="glow"></div>
+  <div class="wrap">
     <span class="tag">Devlog</span>
     <h1>Notes from development.</h1>
-    <p class="lead">Progress updates, screenshots and behind-the-scenes notes as we build Samjoko.</p>
+    <p class="lead">Progress, screenshots and the thinking behind Samjoko, shared as it takes shape.</p>
   </div>
-  <section>
+</div>
+<section>
+  <div class="wrap">
     {% if site.posts.size > 0 %}
-    <div class="posts">
       {% for post in site.posts %}
-      <a class="post-card" href="{{ post.url | relative_url }}">
-        <div class="thumb"{% if post.image %} style="background-image:url('{{ post.image | relative_url }}')"{% endif %}></div>
-        <div class="body">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time>
-          <h3>{{ post.title }}</h3>
-          {% if post.summary %}<p>{{ post.summary }}</p>{% endif %}
-        </div>
-      </a>
+        <div style="margin-bottom:16px">{% include feature.html post=post %}</div>
       {% endfor %}
-    </div>
     {% else %}
-    <p class="empty">The first entry is coming soon.</p>
+      <p class="empty">The first entry is coming soon.</p>
     {% endif %}
-  </section>
-</main>
+  </div>
+</section>
