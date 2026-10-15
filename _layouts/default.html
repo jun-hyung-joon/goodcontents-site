@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#120f0d">
+<meta name="theme-color" content="#0a1020">
 <title>{% if page.title %}{{ page.title }} | {% endif %}GOOD CONTENTS{% unless page.title %} | Samjoko{% endunless %}</title>
 <meta name="description" content="{{ page.summary | default: site.description }}">
 <meta property="og:type" content="website">
@@ -12,10 +12,10 @@
 <meta property="og:description" content="{{ page.summary | default: site.description }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ page.image | default: '/assets/img/hero.svg' | absolute_url }}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23c8381e'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23f6eee2' font-family='serif' font-weight='bold'%3E%E5%A5%BD%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="{{ '/assets/img/crest.svg' | relative_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
 <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
@@ -23,7 +23,7 @@
 <body>
 <header class="top{% unless page.hero %} solid{% endunless %}">
   <div class="wrap">
-    <a class="brand" href="{{ '/' | relative_url }}"><span class="seal">好</span><b>GOOD CONTENTS</b></a>
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/crest.svg' | relative_url }}" alt=""><b>GOOD CONTENTS</b></a>
     <nav>
       <a class="hide-s" href="{{ '/#game' | relative_url }}">Game</a>
       <a href="{{ '/devlog/' | relative_url }}">News</a>
@@ -37,7 +37,7 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="{{ '/' | relative_url }}"><span class="seal">好</span><b>GOOD CONTENTS</b></a>
+    <a class="brand" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/crest.svg' | relative_url }}" alt=""><b>GOOD CONTENTS</b></a>
     <span>© {{ site.time | date: '%Y' }} GOOD CONTENTS. Samjoko is in development.</span>
     <a href="mailto:contact@goodcontents.co.kr">contact@goodcontents.co.kr</a>
   </div>
