@@ -1,0 +1,11 @@
+{%- assign p = include.post -%}
+<article class="ncard">
+  {%- if p.youtube and p.youtube != '' -%}
+  <div class="slot" style="aspect-ratio:16/9"><iframe src="{{ p.youtube }}" title="{{ p.title }}" allowfullscreen></iframe></div>
+  {%- else -%}
+  {% include slot.html src=p.media label="Image or clip" alt=p.title %}
+  {%- endif -%}
+  <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: '%Y.%m.%d' }}</time>
+  <h3>{{ p.title }}</h3>
+  <div class="ntext">{{ p.content | strip_html | normalize_whitespace }}</div>
+</article>
