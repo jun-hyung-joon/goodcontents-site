@@ -1,13 +1,11 @@
 ---
 layout: default
 title: News
-summary: Devlog and news from GOOD CONTENTS.
+summary: News and devlog from GOOD CONTENTS.
 ---
 <section class="sec">
   <div class="wrap">
-    <p class="eyebrow">News</p>
-    <h2>Devlog</h2>
-    <p class="sub">Notes, screenshots and updates from the development of Samjoko.</p>
+    <div class="head"><span class="label">NEWS</span><span class="label-sub">Devlog and updates</span></div>
     {% if site.posts.size > 0 %}
       {% for post in site.posts %}
         {% include feature.html post=post %}
